@@ -2,12 +2,12 @@ import * as Styled from './styles';
 import { FormTask } from '../FormTask/index';
 import { AiOutlineClose } from 'react-icons/ai';
 import { useState } from 'react';
+import P from 'prop-types';
 
-export const ToDo = () => {
+export const ToDo = ({ edit, setEdit }) => {
   const getStorage = JSON.parse(localStorage.getItem('tasks'));
   const [tasks, setTasks] = useState(getStorage || []);
   const [taskEditText, setTaskEditText] = useState('');
-  const [edit, setEdit] = useState(false);
   const [id, setId] = useState();
 
   const handleEdit = (id) => {
@@ -58,4 +58,9 @@ export const ToDo = () => {
       />
     </>
   );
+};
+
+ToDo.propTypes = {
+  edit: P.bool.isRequired,
+  setEdit: P.func.isRequired,
 };

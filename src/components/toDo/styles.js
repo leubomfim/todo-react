@@ -35,7 +35,8 @@ export const EditArea = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
-  width: 500px;
+  max-width: 500px;
+  width: 90%;
   position: relative;
   z-index: 100;
 `;
